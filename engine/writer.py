@@ -103,11 +103,15 @@ def _code(text):
 
 def _system(cfg):
     with open(os.path.join(ROOT, "prompts", "writer_guide.md"), encoding="utf-8") as fh:
-        guide = fh.read().replace("{LANGUAGE}", cfg.LANGUAGE)
+        target = int(getattr(cfg, "TARGET_DURATION", 60))
+        guide = (fh.read().replace("{LANGUAGE}", cfg.LANGUAGE).replace("{TARGET}", str(target))
+                 .replace("{MAX}", str(int(cfg.MAX_DURATION))).replace("{WORDS}", f"{int(target * 1.9)}–{int(target * 2.2)}"))
     with open(EXAMPLE, encoding="utf-8") as fh:
         example = fh.read()
     return (guide + "\n\n# Reference episode\n\nA complete, finished episode. Match its quality, pacing, "
-            "structure and code style – but invent visuals that fit the new topic.\n\n```python\n" + example + "```\n")
+            "structure and code style – but invent visuals that fit the new topic. NOTE: the reference runs about two "
+            f"minutes; today's episode must be about {target} seconds – fewer scenes, fewer and shorter sentences, "
+            "shorter pauses.\n\n```python\n" + example + "```\n")
 
 
 def write_episode(cfg, topic, teaser_topic, day, done):
