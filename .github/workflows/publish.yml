@@ -45,6 +45,8 @@ jobs:
           gh run download "$RUN_ID" -n episode -D build/latest
 
       - name: Upload to the platforms
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python bot.py publish build/latest
 
       - name: Save progress
