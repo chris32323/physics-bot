@@ -1,11 +1,7 @@
-numpy
-scipy
-matplotlib
-pillow
-requests
-websocket-client
-pynacl            # GitHub: erneuerte Tokens als Secret speichern
-# nur für den YouTube-Upload:
-google-api-python-client
-google-auth-oauthlib
-google-auth-httplib2
+numpy>=1.26,<3
+opencv-python-headless>=4.9,<5
+Pillow>=10.0,<13
+requests>=2.31,<3
+piper-tts>=1.2,<2
+kokoro-onnx>=0.4,<1
+websocket-client>=1.7,<2
