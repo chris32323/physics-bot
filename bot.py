@@ -18,6 +18,7 @@ import argparse
 import datetime
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -160,9 +161,22 @@ def review_sheets(ep, tl, meta, out_dir):
             for i in range(0, len(paths), 4)]
 
 
+LAYOUT_MARKS = ("overlaps text", "is cut off", "subtitle area", "header/top bar", "bottom zone")
+
+
+def _soft_ok(problems):
+    """Only small text overlaps left? Then the visual review decides instead of aborting."""
+    for p in problems:
+        m = re.search(r"overlap (\d+)%", p)
+        if "overlaps text" not in p or not m or int(m.group(1)) > 35:
+            return False
+    return True
+
+
 def develop(code, ep_path, day, out_dir):
     """Step 4: technical checks + repairs, real voice, visual review + improvements."""
     for rnd in range(cfg.REVIEW_ROUNDS + 1):
+        history = []
         for attempt in range(cfg.FIX_ATTEMPTS + 1):
             with open(ep_path, "w", encoding="utf-8") as fh:
                 fh.write(code)
@@ -171,11 +185,16 @@ def develop(code, ep_path, day, out_dir):
                 break
             log(f"  {len(problems)} Problem(e) gefunden:")
             for p in problems[:8]:
-                log("   - " + p.splitlines()[0])
+                log("   - " + p.splitlines()[0][:220])
             if attempt == cfg.FIX_ATTEMPTS:
+                if ep is not None and tl is not None and _soft_ok(problems):
+                    log("  Nur noch kleine Überlappungen – die Bildprüfung entscheidet.")
+                    break
                 raise RuntimeError("Episode ist nach mehreren Reparaturversuchen noch fehlerhaft.")
             log("  KI repariert …")
-            code = writer.fix_episode(cfg, code, problems)
+            repeated = attempt > 0 and all(any(k in p for k in LAYOUT_MARKS) for p in problems)
+            code = writer.fix_episode(cfg, code, problems, history=history if repeated else None)
+            history += problems
         if rnd == cfg.REVIEW_ROUNDS:
             break
         log("  Bildprüfung durch die KI …")

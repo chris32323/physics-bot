@@ -51,7 +51,7 @@ TARGET_LUFS = -14                    # Gesamtlautstärke (Standard für Social M
 WRITER_PROVIDER = "openai"           # "openai" (Standard) – alternativ "anthropic"
 WRITER_MODEL = "gpt-6.1-sol"         # GPT-6.1 Sol; bei "anthropic" z. B. "claude-sonnet-5-5"
 WRITER_EFFORT = "medium"             # Denkaufwand der KI: "low", "medium" oder "high"
-FIX_ATTEMPTS = 3                     # wie oft die KI technische Fehler selbst reparieren darf
+FIX_ATTEMPTS = 5                     # wie oft die KI technische Fehler selbst reparieren darf
 REVIEW_ROUNDS = 2                    # wie oft sie nach der Bildprüfung nachbessern darf
 
 # ── Freigabe ─────────────────────────────────────────────────────────
@@ -64,7 +64,7 @@ APPROVAL = "github"
 
 # ── Hochladen (Schritt 6) ────────────────────────────────────────────
 UPLOAD_YOUTUBE = False               # auf True setzen, sobald die Zugänge eingerichtet sind
-UPLOAD_INSTAGRAM = True
+UPLOAD_INSTAGRAM = False
 UPLOAD_TIKTOK = False
 
 YOUTUBE_PRIVACY = "public"           # "public", "unlisted" oder "private"
