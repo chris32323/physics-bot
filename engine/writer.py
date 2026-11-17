@@ -117,10 +117,18 @@ def write_episode(cfg, topic, teaser_topic, day, done):
     return _code(ask(cfg, _system(cfg), prompt))
 
 
-def fix_episode(cfg, code, problems, reason="automatic checks"):
+def fix_episode(cfg, code, problems, reason="automatic checks", history=None):
     prompt = (f"The episode below has problems found by {reason}. Fix all of them and keep everything "
               f"else as it is. Reply with the complete corrected file in one ```python block.\n\n"
-              "Problems:\n" + "\n".join(f"- {p}" for p in problems) + "\n\nCurrent file:\n```python\n" + code + "```")
+              "Problems:\n" + "\n".join(f"- {p}" for p in problems))
+    if history:
+        prompt += ("\n\nIMPORTANT – earlier fix attempts did not solve this; texts were only moved onto other "
+                   "texts. Earlier reports:\n" + "\n".join(f"- {p}" for p in history[-12:]) +
+                   "\nMake a structural fix instead of nudging: give every text item its own row with at least "
+                   "25 units of empty space to its neighbours (check all items of that scene together, also the "
+                   "ones from earlier steps that are still visible), fade out an old item before a new one "
+                   "appears in the same place, or use smaller fonts / fewer items on screen.")
+    prompt += "\n\nCurrent file:\n```python\n" + code + "```"
     return _code(ask(cfg, _system(cfg), prompt))
 
 

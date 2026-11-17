@@ -8,6 +8,7 @@ and has drawing helpers that already use the channel's look.
 Coordinates: a 1080 x 1920 portrait canvas, origin bottom-left, y up.
 """
 import math
+import sys
 from dataclasses import dataclass, field
 from typing import Callable, Optional
 
@@ -156,7 +157,10 @@ class Canvas(Timing):
                               alpha=0.95 * alpha)
         art = self.ax.text(x, y, s, color=color, fontsize=size, fontweight=weight, ha=ha, va=va, alpha=alpha,
                            zorder=z, linespacing=linespacing, **kw)
-        self.texts.append((art, kind))
+        f = sys._getframe(1)
+        while f is not None and f.f_code.co_filename == __file__:
+            f = f.f_back
+        self.texts.append((art, kind, f.f_lineno if f is not None else None))
         return art
 
     def heading(self, x, y, s, size=60, color=FG, alpha=1.0, ha="center", va="center", z=10):

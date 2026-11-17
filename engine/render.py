@@ -127,7 +127,7 @@ class Renderer:
                                        ha="center", va="center", alpha=al, zorder=30, linespacing=1.25,
                                        bbox=dict(boxstyle="round,pad=0.5,rounding_size=0.5", fc="#04050c",
                                                  ec="none", alpha=0.62 * al))
-                    c.texts.append((art, "subtitle"))
+                    c.texts.append((art, "subtitle", None))
                 break
 
     def _fade(self, si, t, dur):
@@ -147,14 +147,17 @@ class Renderer:
 def _boxes(r, c):
     rend = r.fig.canvas.get_renderer()
     out = []
-    for art, kind in c.texts:
+    for art, kind, line in c.texts:
         a = art.get_alpha()
         if a is not None and a < 0.6:
             continue
         patch = art.get_bbox_patch()
         bb = (patch if patch is not None else art).get_window_extent(rend)
-        out.append((kind, art.get_text().replace("\n", " "), (bb.x0 / r.scale, bb.y0 / r.scale,
-                                                              bb.x1 / r.scale, bb.y1 / r.scale)))
+        x0, y0, x1, y1 = bb.x0 / r.scale, bb.y0 / r.scale, bb.x1 / r.scale, bb.y1 / r.scale
+        if patch is None:                     # ignore the empty line spacing above/below the glyphs
+            pad = (y1 - y0) * 0.12
+            y0, y1 = y0 + pad, y1 - pad
+        out.append((kind, art.get_text().replace("\n", " "), (x0, y0, x1, y1), line))
     return out
 
 
@@ -167,6 +170,10 @@ def _overlap(a, b):
     return w * h / min(area(a), area(b))
 
 
+def _src(line):
+    return f" [episode line {line}]" if line else ""
+
+
 def check_frame(r, c, g):
     r.fig.canvas.draw()
     boxes = _boxes(r, c)
@@ -177,19 +184,30 @@ def check_frame(r, c, g):
     content = [b for b in boxes if b[0] == "content"]
     has_sub = any(b[0] == "subtitle" for b in boxes)
     top = 1665 if sc.header else 1772
-    for i, (_, txt, bb) in enumerate(content):
+    for i, (_, txt, bb, line) in enumerate(content):
         if bb[0] < 25 or bb[2] > S.W - 25:
-            issues.append(f"{where}: text '{txt}' is cut off at the left/right edge")
+            issues.append(f"{where}: text '{txt}'{_src(line)} is cut off at the left/right edge "
+                          f"(x {bb[0]:.0f}–{bb[2]:.0f}, allowed 25–{S.W - 25})")
         if bb[1] < S.UI_BOTTOM:
-            issues.append(f"{where}: text '{txt}' reaches into the bottom zone (y<{S.UI_BOTTOM}) "
+            issues.append(f"{where}: text '{txt}'{_src(line)} reaches into the bottom zone (y<{S.UI_BOTTOM}) "
                           f"that TikTok/Instagram cover with their own UI")
         if has_sub and bb[1] < S.SUB_ZONE[1] and bb[3] > S.SUB_ZONE[0]:
-            issues.append(f"{where}: text '{txt}' overlaps the subtitle area (y {S.SUB_ZONE[0]}-{S.SUB_ZONE[1]})")
+            issues.append(f"{where}: text '{txt}'{_src(line)} overlaps the subtitle area "
+                          f"(text y {bb[1]:.0f}–{bb[3]:.0f}, keep it above y={S.SUB_ZONE[1] + 20})")
         if bb[3] > top:
-            issues.append(f"{where}: text '{txt}' overlaps the header/top bar (keep content below y={top - 15})")
-        for _, txt2, bb2 in content[i + 1:]:
-            if _overlap(bb, bb2) > 0.12:
-                issues.append(f"{where}: text '{txt}' overlaps text '{txt2}'")
+            issues.append(f"{where}: text '{txt}'{_src(line)} overlaps the header/top bar "
+                          f"(text top y={bb[3]:.0f}, keep content below y={top - 15})")
+        for _, txt2, bb2, line2 in content[i + 1:]:
+            ov = _overlap(bb, bb2)
+            if ov > 0.12:
+                upper, lower = (bb, bb2) if bb[3] >= bb2[3] else (bb2, bb)
+                gap = upper[1] - lower[3]                 # negative = they overlap vertically
+                need = 22 - gap
+                issues.append(
+                    f"{where}: text '{txt}'{_src(line)} (y {bb[1]:.0f}–{bb[3]:.0f}) overlaps text '{txt2}'{_src(line2)} "
+                    f"(y {bb2[1]:.0f}–{bb2[3]:.0f}), overlap {ov:.0%}. Fix: increase their vertical distance by "
+                    f"at least {need:.0f} units, or fade the earlier one out before the later one appears "
+                    f"at the same place, or use a smaller font.")
     return issues
 
 
