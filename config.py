@@ -29,10 +29,11 @@ VOICE_SPEED = 1.0                    # 1.0 = normal, 0.9 = etwas langsamer
 # ── Tempo / genug Zeit für die Erklärung ─────────────────────────────
 # Die Länge jeder Szene richtet sich nach der Sprecherstimme. Diese Werte
 # geben zusätzlich Luft, damit man Bild und Erklärung in Ruhe aufnehmen kann.
-SENTENCE_GAP = 0.40                  # Pause nach jedem Satz (Sekunden)
-SCENE_LEAD = 0.50                    # Ruhe am Anfang jeder Szene
-SCENE_TAIL = 0.80                    # Ruhe am Ende jeder Szene
-MAX_DURATION = 170                   # längere Videos werden als Problem gemeldet (Sekunden)
+SENTENCE_GAP = 0.30                  # Pause nach jedem Satz (Sekunden)
+SCENE_LEAD = 0.35                    # Ruhe am Anfang jeder Szene
+SCENE_TAIL = 0.50 
+TARGET_DURATION = 60
+MAX_DURATION = 75              # längere Videos werden als Problem gemeldet (Sekunden)
 SUBTITLES = True                     # Untertitel einblenden (empfohlen – viele schauen ohne Ton)
 
 # ── Bild ─────────────────────────────────────────────────────────────
