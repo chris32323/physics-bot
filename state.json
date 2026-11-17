@@ -11,7 +11,10 @@
   "day": 16,
   "topic": "How a rocket moves in empty space (momentum and Newton's third law)",
   "episode": "episodes/e016_how_a_rocket_moves_in_empty_space_moment.py",
-  "title": "What do rockets push against in space? #physics #shorts"
+  "title": "What do rockets push against in space? #physics #shorts",
+  "published": {
+   "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} – Instagram nimmt längere Reels nur von einer öffentlichen Adresse an (öffentliches GitHub-Repository nötig)."
+  }
  },
  "published": [
   {
@@ -28,6 +31,12 @@
    "day": 15,
    "results": {
     "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+   }
+  },
+  {
+   "day": 16,
+   "results": {
+    "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} – Instagram nimmt längere Reels nur von einer öffentlichen Adresse an (öffentliches GitHub-Repository nötig)."
    }
   }
  ]
