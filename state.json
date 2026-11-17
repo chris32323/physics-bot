@@ -15,7 +15,10 @@
   "day": 20,
   "topic": "Terminal velocity: why raindrops don't hit like bullets",
   "episode": "episodes/e020_terminal_velocity_why_raindrops_don_t_hi.py",
-  "title": "Why raindrops don't hit like bullets #physics #shorts"
+  "title": "Why raindrops don't hit like bullets #physics #shorts",
+  "published": {
+   "instagram": "18384107086241465"
+  }
  },
  "published": [
   {
@@ -56,6 +59,12 @@
    "day": 19,
    "results": {
     "instagram": "18020951147961889"
+   }
+  },
+  {
+   "day": 20,
+   "results": {
+    "instagram": "18384107086241465"
    }
   }
  ]
