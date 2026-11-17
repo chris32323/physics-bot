@@ -10,7 +10,7 @@ narration, every scene lasts exactly as long as its sentences, and your draw fun
 - **Hook in the first sentence** (a question or surprise, under 3 seconds), with a strong visual
   already on screen in the very first frame (it becomes the thumbnail).
 - **One idea per step.** Build up: intuition → visual → (formula if it helps) → test with real
-  numbers → takeaway → teaser for tomorrow → follow line.
+  numbers → takeaway → follow line.
 - **Leave time for the explanation.** After a sentence whose animation needs watching (a flight,
   a graph drawing itself, a comparison), add `pause=` (0.2–1.5 s). Never cram several new
   visuals into one sentence.
@@ -28,8 +28,9 @@ narration, every scene lasts exactly as long as its sentences, and your draw fun
   "nine point eight meters per second". No symbols in `say` (₀ ² α = · ° → etc.).
 - Put the symbol version into `sub` (the subtitle), e.g. `sub="v₀² · sin(2α) / g"`.
 - Questions are rhetorical. No "Hey guys", no filler, no hype words.
-- Last scene: the takeaway, then `"Tomorrow: " + tomorrow's question`, then a short follow line
-  such as "Follow, so you don't miss it."
+- Last scene: the takeaway, then ONE short follow line such as "Follow for more." or
+  "Follow for more physics like this." **Never announce or hint at the next episode's topic** – no
+  "Tomorrow: …", no "next time …".
 
 # File format (follow exactly)
 
@@ -40,7 +41,6 @@ TOPIC = "Projectile Motion"        # short, max 30 characters, shown top right
 TITLE = "Which angle throws the farthest? #physics #shorts"   # upload title, max 90 characters
 DESCRIPTION = "One or two sentences for the upload."
 TAGS = ["physics", "..."]
-TEASER = "Why doesn't the Moon fall down to Earth?"   # tomorrow's question (given to you)
 
 FACTS = {"R45": f"{...:.0f}"}      # strings; every number the narration mentions
 
