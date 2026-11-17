@@ -12,7 +12,10 @@
   "day": 17,
   "topic": "Why the sky is blue and sunsets are red (Rayleigh scattering)",
   "episode": "episodes/e017_why_the_sky_is_blue_and_sunsets_are_red_.py",
-  "title": "Why blue skies turn into red sunsets #physics #shorts"
+  "title": "Why blue skies turn into red sunsets #physics #shorts",
+  "published": {
+   "instagram": "18114778841613909"
+  }
  },
  "published": [
   {
@@ -35,6 +38,12 @@
    "day": 16,
    "results": {
     "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} – Instagram nimmt längere Reels nur von einer öffentlichen Adresse an (öffentliches GitHub-Repository nötig)."
+   }
+  },
+  {
+   "day": 17,
+   "results": {
+    "instagram": "18114778841613909"
    }
   }
  ]
