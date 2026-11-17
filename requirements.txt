@@ -1,0 +1,11 @@
+numpy
+scipy
+matplotlib
+pillow
+requests
+websocket-client
+pynacl            # GitHub: erneuerte Tokens als Secret speichern
+# nur für den YouTube-Upload:
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2

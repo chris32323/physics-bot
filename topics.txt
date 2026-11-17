@@ -1,0 +1,40 @@
+# Ein Thema pro Zeile. Der Bot nimmt jeden Tag das nächste noch nicht erledigte Thema.
+# Zeilen mit # werden ignoriert. Du kannst jederzeit Themen ergänzen, umsortieren oder löschen.
+Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)
+Why ice skaters spin faster when they pull their arms in (angular momentum)
+Why a hammer and a feather fall equally fast on the Moon (free fall vs. air resistance)
+How a rocket moves in empty space (momentum and Newton's third law)
+Why the sky is blue and sunsets are red (Rayleigh scattering)
+How a huge steel ship can float (buoyancy and Archimedes' principle)
+Why you feel heavier in an accelerating elevator (apparent weight)
+Terminal velocity: why raindrops don't hit like bullets
+Why a spoon looks bent in water (refraction)
+How a lever lets you lift a car (torque)
+Why a pendulum keeps time (period independent of amplitude)
+Resonance: how a voice can shatter a wine glass
+The Doppler effect: why a passing siren changes pitch
+Why a curveball curves (Magnus effect)
+How noise-cancelling headphones work (destructive interference)
+Why higher satellites move slower (orbital speed)
+Escape velocity: how fast you need to leave Earth for good
+How a rainbow forms (dispersion and the 42° angle)
+Why a truck is harder to stop than a car (momentum)
+Centripetal force: why you seem to slide outward in a turn
+Pressure: why a knife cuts and snowshoes don't sink
+Why hot air balloons rise (density)
+Energy conservation on a roller coaster
+Why ice floats (the density anomaly of water)
+Total internal reflection: how fiber optics carry light
+Why we have seasons (axial tilt, not distance)
+Tides: why there are two high tides a day
+Springs and simple harmonic motion
+Friction: why ABS brakes stop you faster (static vs. kinetic friction)
+How a falling cat lands on its feet (angular momentum)
+How airplane wings create lift
+Why birds on a power line don't get shocked (potential difference)
+Why a compass points north (Earth's magnetic field)
+How a magnifying glass works (converging lenses)
+Why metal feels colder than wood at the same temperature (heat conduction)
+How to tell how far away lightning is (speed of sound vs. light)
+Why a spinning top doesn't fall over (precession)
+Kepler's laws: why planets move faster near the Sun
