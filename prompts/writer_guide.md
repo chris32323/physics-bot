@@ -12,9 +12,10 @@ narration, every scene lasts exactly as long as its sentences, and your draw fun
 - **One idea per step.** Build up: intuition → visual → (formula if it helps) → test with real
   numbers → takeaway → teaser for tomorrow → follow line.
 - **Leave time for the explanation.** After a sentence whose animation needs watching (a flight,
-  a graph drawing itself, a comparison), add `pause=` (0.3–2.5 s). Never cram several new
+  a graph drawing itself, a comparison), add `pause=` (0.2–1.5 s). Never cram several new
   visuals into one sentence.
-- 5–7 scenes, 3–7 steps each, about 200–280 narrated words in total (roughly 90–130 seconds).
+- **Length: about {TARGET} seconds in total** (hard limit {MAX} s). That means 4–5 scenes, 2–4 steps each,
+  about {WORDS} narrated words. One clear idea, explained well, beats three ideas rushed.
 - **Physics must be correct.** No false simplifications; state the key assumptions
   (e.g. no air resistance). Where real life differs, say so in one sentence.
 - **Every number comes from code**: compute it, put the rounded string into `FACTS`, and use
