@@ -1,20 +1,18 @@
 {
- "day": 16,
+ "day": 17,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
   "Why ice skaters spin faster when they pull their arms in (angular momentum)",
   "Why a hammer and a feather fall equally fast on the Moon (free fall vs. air resistance)",
-  "How a rocket moves in empty space (momentum and Newton's third law)"
+  "How a rocket moves in empty space (momentum and Newton's third law)",
+  "Why the sky is blue and sunsets are red (Rayleigh scattering)"
  ],
  "pending": {
-  "day": 16,
-  "topic": "How a rocket moves in empty space (momentum and Newton's third law)",
-  "episode": "episodes/e016_how_a_rocket_moves_in_empty_space_moment.py",
-  "title": "What do rockets push against in space? #physics #shorts",
-  "published": {
-   "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}} – Instagram nimmt längere Reels nur von einer öffentlichen Adresse an (öffentliches GitHub-Repository nötig)."
-  }
+  "day": 17,
+  "topic": "Why the sky is blue and sunsets are red (Rayleigh scattering)",
+  "episode": "episodes/e017_why_the_sky_is_blue_and_sunsets_are_red_.py",
+  "title": "Why blue skies turn into red sunsets #physics #shorts"
  },
  "published": [
   {
