@@ -9,12 +9,21 @@
   "day": 14,
   "topic": "Why ice skaters spin faster when they pull their arms in (angular momentum)",
   "episode": "episodes/e014_why_ice_skaters_spin_faster_when_they_pu.py",
-  "title": "Why pulling your arms in makes you spin faster #physics #shorts"
+  "title": "Why pulling your arms in makes you spin faster #physics #shorts",
+  "published": {
+   "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+  }
  },
  "published": [
   {
    "day": 13,
    "results": {}
+  },
+  {
+   "day": 14,
+   "results": {
+    "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+   }
   }
  ]
 }
