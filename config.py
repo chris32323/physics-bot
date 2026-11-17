@@ -24,7 +24,7 @@ Let questions sound genuinely curious, and leave a short pause before key result
 Never theatrical, never salesy.
 """
 
-VOICE_SPEED = 1.1                   # 1.0 = normal, 0.9 = etwas langsamer
+VOICE_SPEED = 1.3                   # 1.0 = normal, 0.9 = etwas langsamer
 
 # ── Tempo / genug Zeit für die Erklärung ─────────────────────────────
 # Die Länge jeder Szene richtet sich nach der Sprecherstimme. Diese Werte
