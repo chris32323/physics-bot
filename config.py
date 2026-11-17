@@ -64,7 +64,7 @@ APPROVAL = "github"
 
 # ── Hochladen (Schritt 6) ────────────────────────────────────────────
 UPLOAD_YOUTUBE = False               # auf True setzen, sobald die Zugänge eingerichtet sind
-UPLOAD_INSTAGRAM = False
+UPLOAD_INSTAGRAM = True
 UPLOAD_TIKTOK = False
 
 YOUTUBE_PRIVACY = "public"           # "public", "unlisted" oder "private"
