@@ -1,0 +1,42 @@
+# Stimme ausprobieren: spricht deinen Text mit VOICE / VOICE_STYLE aus config.py
+# Die Aufnahme liegt danach im Lauf unter "Artifacts" zum Download.
+name: Voice test
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: "Text, der gesprochen werden soll"
+        required: true
+        default: "Which angle throws a ball the farthest? Let's find out."
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg
+          pip install -r requirements.txt
+
+      - name: Speak
+        env:
+          TEXT: ${{ github.event.inputs.text }}
+        run: python bot.py voice-test "$TEXT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice-test
+          path: voice_test.*
+          retention-days: 7
