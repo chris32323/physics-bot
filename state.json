@@ -1,18 +1,16 @@
 {
- "day": 14,
+ "day": 15,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
-  "Why ice skaters spin faster when they pull their arms in (angular momentum)"
+  "Why ice skaters spin faster when they pull their arms in (angular momentum)",
+  "Why a hammer and a feather fall equally fast on the Moon (free fall vs. air resistance)"
  ],
  "pending": {
-  "day": 14,
-  "topic": "Why ice skaters spin faster when they pull their arms in (angular momentum)",
-  "episode": "episodes/e014_why_ice_skaters_spin_faster_when_they_pu.py",
-  "title": "Why pulling your arms in makes you spin faster #physics #shorts",
-  "published": {
-   "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
-  }
+  "day": 15,
+  "topic": "Why a hammer and a feather fall equally fast on the Moon (free fall vs. air resistance)",
+  "episode": "episodes/e015_why_a_hammer_and_a_feather_fall_equally_.py",
+  "title": "Why a hammer and feather tie on the Moon #physics #shorts"
  },
  "published": [
   {
