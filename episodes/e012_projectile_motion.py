@@ -10,7 +10,6 @@ TITLE = "Which angle throws the farthest? #physics #shorts"
 DESCRIPTION = ("Why 45° gives the longest throw – split the velocity, watch both motions, "
                "derive the range formula and test five angles.")
 TAGS = ["physics", "projectile motion", "kinematics", "science", "math"]
-TEASER = "Why doesn't the Moon fall down to Earth?"
 
 # ---------------------------------------------------------------- physics (all numbers come from here)
 V0, G_ = 20.0, 9.81
@@ -306,15 +305,13 @@ def outro(c):
     c.text(W / 2, 1565, "Remember", size=36, color=YELLOW, weight="bold", alpha=a)
     c.heading(W / 2, 1445, "45° = maximum range", size=52, alpha=a)
     c.text(W / 2, 1350, "(real balls with air drag: a bit less)", size=26, color=MUTED, alpha=c.appear(1, 0.2))
-    d = c.appear(2, 0.1)
-    c.text(W / 2, 1112, "Tomorrow:", size=32, color=BLUE, weight="bold", alpha=d)
-    c.heading(W / 2, 990, wrap(TEASER, 22), size=48, alpha=d)
-    e = c.appear(3, 0.0, 0.6)
+    e = c.appear(2, 0.0, 0.6)
     if e > 0:
         s = 0.9 + 0.1 * e
-        c.panel(W / 2, 720, 660 * s, 120 * s, fill=PINK, alpha=e, radius=60)
-        c.text(W / 2, 720, "Follow for daily physics", size=29, color="white", weight="bold",
+        c.panel(W / 2, 1000, 640 * s, 140 * s, fill=PINK, alpha=e, radius=70)
+        c.text(W / 2, 1000, "Follow for more", size=40, color="white", weight="bold",
                va="center_baseline", alpha=e, z=6)
+        c.text(W / 2, 850, "New physics every day", size=30, color=MUTED, alpha=c.appear(2, 0.4))
 
 
 # ---------------------------------------------------------------- scenes
@@ -363,7 +360,6 @@ SCENES = [
     Scene(outro, header=None, steps=[
         Step("So remember: forty-five degrees gives the maximum range.", sub="So remember: 45° gives the maximum range."),
         Step("With air resistance, the best angle is a little lower.", pause=0.3),
-        Step("Tomorrow: " + TEASER[0].lower() + TEASER[1:], pause=0.3),
-        Step("Follow, so you don't miss it.", pause=0.8, sfx=[("chime", 0.05, {"n": 2})]),
+        Step("Follow for more physics like this.", pause=1.0, sfx=[("chime", 0.05, {"n": 2})]),
     ]),
 ]
