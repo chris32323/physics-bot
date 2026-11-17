@@ -39,7 +39,7 @@ def episode_problems(ep, cfg):
     """Structure + narration rules (after the module was imported)."""
     from .style import Scene, Step
     p = []
-    for name in ("TOPIC", "TITLE", "DESCRIPTION", "TEASER", "FACTS", "SCENES"):
+    for name in ("TOPIC", "TITLE", "DESCRIPTION", "FACTS", "SCENES"):
         if not hasattr(ep, name):
             p.append(f"missing module variable {name}")
     if p:
@@ -74,8 +74,10 @@ def episode_problems(ep, cfg):
             for e in st.sfx:
                 if not (isinstance(e, tuple) and len(e) >= 2 and isinstance(e[0], str)):
                     p.append(f"scene {si + 1} step {ki + 1}: sfx entries must look like ('whoosh', 0.2)")
-    if not str(ep.TEASER).strip():
-        p.append("TEASER is empty")
+    spoken = " ".join((st.say or "") for sc in ep.SCENES for st in sc.steps).lower()
+    if re.search(r"\btomorrow\b|\bnext time\b|\bnext episode\b|\bin the next video\b", spoken):
+        p.append("the narration announces the next episode ('tomorrow' / 'next time') – remove that; "
+                 "end with a short follow line like 'Follow for more.' instead")
     return p
 
 
