@@ -10,7 +10,10 @@
   "day": 15,
   "topic": "Why a hammer and a feather fall equally fast on the Moon (free fall vs. air resistance)",
   "episode": "episodes/e015_why_a_hammer_and_a_feather_fall_equally_.py",
-  "title": "Why a hammer and feather tie on the Moon #physics #shorts"
+  "title": "Why a hammer and feather tie on the Moon #physics #shorts",
+  "published": {
+   "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+  }
  },
  "published": [
   {
@@ -19,6 +22,12 @@
   },
   {
    "day": 14,
+   "results": {
+    "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
+   }
+  },
+  {
+   "day": 15,
    "results": {
     "instagram": "FEHLER: Instagram Upload 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}"
    }
