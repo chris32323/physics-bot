@@ -1,5 +1,5 @@
 {
- "day": 18,
+ "day": 19,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -7,16 +7,14 @@
   "Why a hammer and a feather fall equally fast on the Moon (free fall vs. air resistance)",
   "How a rocket moves in empty space (momentum and Newton's third law)",
   "Why the sky is blue and sunsets are red (Rayleigh scattering)",
-  "How a huge steel ship can float (buoyancy and Archimedes' principle)"
+  "How a huge steel ship can float (buoyancy and Archimedes' principle)",
+  "Why you feel heavier in an accelerating elevator (apparent weight)"
  ],
  "pending": {
-  "day": 18,
-  "topic": "How a huge steel ship can float (buoyancy and Archimedes' principle)",
-  "episode": "episodes/e018_how_a_huge_steel_ship_can_float_buoyancy.py",
-  "title": "How can a huge steel ship float? #physics #shorts",
-  "published": {
-   "instagram": "18096087557673472"
-  }
+  "day": 19,
+  "topic": "Why you feel heavier in an accelerating elevator (apparent weight)",
+  "episode": "episodes/e019_why_you_feel_heavier_in_an_accelerating_.py",
+  "title": "Why elevators make you feel heavier #physics #shorts"
  },
  "published": [
   {
