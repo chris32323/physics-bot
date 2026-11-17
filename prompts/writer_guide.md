@@ -97,7 +97,12 @@ GREEN = forces and gravity, YELLOW = key results, PURPLE = extra category.
   captions – never put anything important there.**
 - Text inside x 40–1040; keep important text left of x ≈ 960 (app buttons on the right).
 - Sizes: headings 48–64, formulas 40–60, labels 26–40, never below 22.
-- At least ~20 units between text boxes. Not more than ~3 text items in one region.
+- At least ~25 units of empty space between text boxes. Not more than ~3 text items in one region.
+- A label with its value (e.g. "Distance" / "384,000 km"): put them side by side on ONE row, or give the
+  pair its own block of ≥ 110 units height. Several facts appearing one after another: either a list
+  whose rows are ≥ 70 units apart (plan all rows of the scene at once), or fade the previous fact out
+  before the next one appears in the same place.
+- A wrapped multi-line heading grows downwards and upwards: leave room for its real number of lines.
 - Keep drawings big and simple; dark background, glowing colours, one focus at a time.
 
 # Sound effects (sparingly, 1–3 per scene)
