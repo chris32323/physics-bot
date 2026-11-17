@@ -1,15 +1,15 @@
 {
- "day": 13,
+ "day": 14,
  "done": [
   "Projectile motion: which angle throws the farthest?",
-  "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)"
+  "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
+  "Why ice skaters spin faster when they pull their arms in (angular momentum)"
  ],
  "pending": {
-  "day": 13,
-  "topic": "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
-  "episode": "episodes/e013_orbits_why_the_moon_doesn_t_fall_down_to.py",
-  "title": "The Moon is falling—and keeps missing Earth #physics #shorts",
-  "published": {}
+  "day": 14,
+  "topic": "Why ice skaters spin faster when they pull their arms in (angular momentum)",
+  "episode": "episodes/e014_why_ice_skaters_spin_faster_when_they_pu.py",
+  "title": "Why pulling your arms in makes you spin faster #physics #shorts"
  },
  "published": [
   {
