@@ -1,5 +1,5 @@
 {
- "day": 19,
+ "day": 20,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -8,16 +8,14 @@
   "How a rocket moves in empty space (momentum and Newton's third law)",
   "Why the sky is blue and sunsets are red (Rayleigh scattering)",
   "How a huge steel ship can float (buoyancy and Archimedes' principle)",
-  "Why you feel heavier in an accelerating elevator (apparent weight)"
+  "Why you feel heavier in an accelerating elevator (apparent weight)",
+  "Terminal velocity: why raindrops don't hit like bullets"
  ],
  "pending": {
-  "day": 19,
-  "topic": "Why you feel heavier in an accelerating elevator (apparent weight)",
-  "episode": "episodes/e019_why_you_feel_heavier_in_an_accelerating_.py",
-  "title": "Why elevators make you feel heavier #physics #shorts",
-  "published": {
-   "instagram": "18020951147961889"
-  }
+  "day": 20,
+  "topic": "Terminal velocity: why raindrops don't hit like bullets",
+  "episode": "episodes/e020_terminal_velocity_why_raindrops_don_t_hi.py",
+  "title": "Why raindrops don't hit like bullets #physics #shorts"
  },
  "published": [
   {
