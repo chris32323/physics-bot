@@ -102,12 +102,78 @@ def instagram_token(cfg, log=print):
     return token
 
 
-def upload_instagram(cfg, video, caption, log=print):
+def public_video_url(video, day, log=print):
+    """GitHub: put the video into a release of this (public) repository so Instagram can fetch it itself.
+    Instagram's direct byte upload refuses longer Reels; fetching from a public address works."""
+    repo, server = os.environ.get("GITHUB_REPOSITORY", ""), os.environ.get("GITHUB_SERVER_URL", "https://github.com")
+    if not (repo and os.environ.get("GH_TOKEN")):
+        return None
+    import subprocess
+    tag = f"video-day{int(day):03d}"
+    name = os.path.basename(video)
+    view = subprocess.run(["gh", "release", "view", tag], capture_output=True, text=True)
+    if view.returncode != 0:
+        r = subprocess.run(["gh", "release", "create", tag, video, "--title", f"Day {day} video",
+                            "--notes", "Video for the Instagram upload (created by the bot)."],
+                           capture_output=True, text=True)
+    else:
+        r = subprocess.run(["gh", "release", "upload", tag, video, "--clobber"], capture_output=True, text=True)
+    if r.returncode != 0:
+        log(f"  Instagram: GitHub-Release fehlgeschlagen ({r.stderr.strip()[:200]})")
+        return None
+    url = f"{server}/{repo}/releases/download/{tag}/{name}"
+    log(f"  Video öffentlich bereitgestellt: {url}")
+    return url
+
+
+def _ig_wait_and_publish(base, user, cid, token, log):
+    for _ in range(180):                                          # up to ~15 minutes processing
+        st = requests.get(f"{base}/{cid}", params={"fields": "status_code,status", "access_token": token},
+                          timeout=60).json()
+        if st.get("status_code") == "FINISHED":
+            break
+        if st.get("status_code") == "ERROR":
+            raise RuntimeError(f"Instagram Verarbeitung fehlgeschlagen: {st}")
+        time.sleep(5)
+    else:
+        raise RuntimeError("Instagram: Verarbeitung dauert zu lange")
+    pub = requests.post(f"{base}/{user}/media_publish", data={"creation_id": cid, "access_token": token},
+                        timeout=60).json()
+    if "id" not in pub:
+        raise RuntimeError(f"Instagram publish: {pub}")
+    log(f"  Instagram: veröffentlicht (ID {pub['id']})")
+    return pub["id"]
+
+
+def upload_instagram(cfg, video, caption, log=print, day=0):
     token, user = instagram_token(cfg, log), _env("IG_USER_ID")
     base = f"https://{cfg.INSTAGRAM_HOST}/{cfg.INSTAGRAM_API_VERSION}"
-    r = requests.post(f"{base}/{user}/media", data={"media_type": "REELS", "upload_type": "resumable",
-                                                    "caption": caption[:2200], "share_to_feed": "true",
-                                                    "access_token": token}, timeout=60).json()
+    url = public_video_url(video, day, log)
+    common = {"media_type": "REELS", "caption": caption[:2200], "share_to_feed": "true", "access_token": token}
+    errors = []
+    if url:
+        # 1) Instagram fetches the video from the public address (works with both login types)
+        r = requests.post(f"{base}/{user}/media", data={**common, "video_url": url}, timeout=60).json()
+        if "id" in r:
+            try:
+                return _ig_wait_and_publish(base, user, r["id"], token, log)
+            except RuntimeError as e:
+                errors.append(str(e))
+        else:
+            errors.append(f"video_url: {r}")
+        # 2) resumable container, Meta fetches the file via the file_url header
+        r = requests.post(f"{base}/{user}/media", data={**common, "upload_type": "resumable"}, timeout=60).json()
+        if "id" in r:
+            uri = r.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{cfg.INSTAGRAM_API_VERSION}/{r['id']}"
+            up = requests.post(uri, headers={"Authorization": f"OAuth {token}", "file_url": url}, timeout=600)
+            if up.status_code == 200:
+                return _ig_wait_and_publish(base, user, r["id"], token, log)
+            errors.append(f"file_url {up.status_code}: {up.text[:200]}")
+        else:
+            errors.append(f"resumable: {r}")
+        raise RuntimeError("Instagram: " + " | ".join(errors))
+    # 3) no public address (e.g. private repo or local PC): direct byte upload – only short Reels get through
+    r = requests.post(f"{base}/{user}/media", data={**common, "upload_type": "resumable"}, timeout=60).json()
     if "id" not in r:
         raise RuntimeError(f"Instagram: {r}")
     cid = r["id"]
@@ -117,21 +183,9 @@ def upload_instagram(cfg, video, caption, log=print):
         up = requests.post(uri, headers={"Authorization": f"OAuth {token}", "offset": "0", "file_size": str(size)},
                            data=fh, timeout=1800)
     if up.status_code != 200:
-        raise RuntimeError(f"Instagram Upload {up.status_code}: {up.text[:300]}")
-    for _ in range(120):                                          # up to ~10 minutes processing
-        st = requests.get(f"{base}/{cid}", params={"fields": "status_code,status", "access_token": token},
-                          timeout=60).json()
-        if st.get("status_code") == "FINISHED":
-            break
-        if st.get("status_code") == "ERROR":
-            raise RuntimeError(f"Instagram Verarbeitung fehlgeschlagen: {st}")
-        time.sleep(5)
-    pub = requests.post(f"{base}/{user}/media_publish", data={"creation_id": cid, "access_token": token},
-                        timeout=60).json()
-    if "id" not in pub:
-        raise RuntimeError(f"Instagram publish: {pub}")
-    log(f"  Instagram: veröffentlicht (ID {pub['id']})")
-    return pub["id"]
+        raise RuntimeError(f"Instagram Upload {up.status_code}: {up.text[:300]} – Instagram nimmt längere Reels "
+                           f"nur von einer öffentlichen Adresse an (öffentliches GitHub-Repository nötig).")
+    return _ig_wait_and_publish(base, user, cid, token, log)
 
 
 # ---------------------------------------------------------------- TikTok (Content Posting API)
@@ -220,7 +274,7 @@ def publish_all(cfg, info, log=print):
     for flag, name, fn in ((cfg.UPLOAD_YOUTUBE, "youtube",
                             lambda: upload_youtube(cfg, info["final_4k"], info["title"],
                                                    info["description"] + "\n\n" + tags, info["tags"], log)),
-                           (cfg.UPLOAD_INSTAGRAM, "instagram", lambda: upload_instagram(cfg, small, caption, log)),
+                           (cfg.UPLOAD_INSTAGRAM, "instagram", lambda: upload_instagram(cfg, small, caption, log, info.get("day", 0))),
                            (cfg.UPLOAD_TIKTOK, "tiktok", lambda: upload_tiktok(cfg, small, caption, log))):
         if not flag:
             continue
