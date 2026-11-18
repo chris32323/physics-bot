@@ -16,7 +16,10 @@
   "day": 21,
   "topic": "Why a spoon looks bent in water (refraction)",
   "episode": "episodes/e021_why_a_spoon_looks_bent_in_water_refracti.py",
-  "title": "Why does a spoon look bent in water? #physics #shorts"
+  "title": "Why does a spoon look bent in water? #physics #shorts",
+  "published": {
+   "instagram": "18153862804509187"
+  }
  },
  "published": [
   {
@@ -63,6 +66,12 @@
    "day": 20,
    "results": {
     "instagram": "18384107086241465"
+   }
+  },
+  {
+   "day": 21,
+   "results": {
+    "instagram": "18153862804509187"
    }
   }
  ]
