@@ -1,5 +1,5 @@
 {
- "day": 20,
+ "day": 21,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -9,16 +9,14 @@
   "Why the sky is blue and sunsets are red (Rayleigh scattering)",
   "How a huge steel ship can float (buoyancy and Archimedes' principle)",
   "Why you feel heavier in an accelerating elevator (apparent weight)",
-  "Terminal velocity: why raindrops don't hit like bullets"
+  "Terminal velocity: why raindrops don't hit like bullets",
+  "Why a spoon looks bent in water (refraction)"
  ],
  "pending": {
-  "day": 20,
-  "topic": "Terminal velocity: why raindrops don't hit like bullets",
-  "episode": "episodes/e020_terminal_velocity_why_raindrops_don_t_hi.py",
-  "title": "Why raindrops don't hit like bullets #physics #shorts",
-  "published": {
-   "instagram": "18384107086241465"
-  }
+  "day": 21,
+  "topic": "Why a spoon looks bent in water (refraction)",
+  "episode": "episodes/e021_why_a_spoon_looks_bent_in_water_refracti.py",
+  "title": "Why does a spoon look bent in water? #physics #shorts"
  },
  "published": [
   {
