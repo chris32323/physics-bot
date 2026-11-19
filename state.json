@@ -1,5 +1,5 @@
 {
- "day": 21,
+ "day": 22,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -10,16 +10,14 @@
   "How a huge steel ship can float (buoyancy and Archimedes' principle)",
   "Why you feel heavier in an accelerating elevator (apparent weight)",
   "Terminal velocity: why raindrops don't hit like bullets",
-  "Why a spoon looks bent in water (refraction)"
+  "Why a spoon looks bent in water (refraction)",
+  "How a lever lets you lift a car (torque)"
  ],
  "pending": {
-  "day": 21,
-  "topic": "Why a spoon looks bent in water (refraction)",
-  "episode": "episodes/e021_why_a_spoon_looks_bent_in_water_refracti.py",
-  "title": "Why does a spoon look bent in water? #physics #shorts",
-  "published": {
-   "instagram": "18153862804509187"
-  }
+  "day": 22,
+  "topic": "How a lever lets you lift a car (torque)",
+  "episode": "episodes/e022_how_a_lever_lets_you_lift_a_car_torque.py",
+  "title": "How a lever lets you lift a car #physics #shorts"
  },
  "published": [
   {
