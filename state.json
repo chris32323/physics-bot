@@ -1,5 +1,5 @@
 {
- "day": 22,
+ "day": 23,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -11,16 +11,14 @@
   "Why you feel heavier in an accelerating elevator (apparent weight)",
   "Terminal velocity: why raindrops don't hit like bullets",
   "Why a spoon looks bent in water (refraction)",
-  "How a lever lets you lift a car (torque)"
+  "How a lever lets you lift a car (torque)",
+  "Why a pendulum keeps time (period independent of amplitude)"
  ],
  "pending": {
-  "day": 22,
-  "topic": "How a lever lets you lift a car (torque)",
-  "episode": "episodes/e022_how_a_lever_lets_you_lift_a_car_torque.py",
-  "title": "How a lever lets you lift a car #physics #shorts",
-  "published": {
-   "instagram": "18043495382839038"
-  }
+  "day": 23,
+  "topic": "Why a pendulum keeps time (period independent of amplitude)",
+  "episode": "episodes/e023_why_a_pendulum_keeps_time_period_indepen.py",
+  "title": "Why different pendulum swings keep the same beat #physics #shorts"
  },
  "published": [
   {
