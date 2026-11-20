@@ -18,7 +18,10 @@
   "day": 23,
   "topic": "Why a pendulum keeps time (period independent of amplitude)",
   "episode": "episodes/e023_why_a_pendulum_keeps_time_period_indepen.py",
-  "title": "Why different pendulum swings keep the same beat #physics #shorts"
+  "title": "Why different pendulum swings keep the same beat #physics #shorts",
+  "published": {
+   "instagram": "17920299876537932"
+  }
  },
  "published": [
   {
@@ -77,6 +80,12 @@
    "day": 22,
    "results": {
     "instagram": "18043495382839038"
+   }
+  },
+  {
+   "day": 23,
+   "results": {
+    "instagram": "17920299876537932"
    }
   }
  ]
