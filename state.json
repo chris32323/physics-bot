@@ -19,7 +19,10 @@
   "day": 24,
   "topic": "Resonance: how a voice can shatter a wine glass",
   "episode": "episodes/e024_resonance_how_a_voice_can_shatter_a_wine.py",
-  "title": "Can a voice really shatter a glass? #physics #shorts"
+  "title": "Can a voice really shatter a glass? #physics #shorts",
+  "published": {
+   "instagram": "18133856194681909"
+  }
  },
  "published": [
   {
@@ -84,6 +87,12 @@
    "day": 23,
    "results": {
     "instagram": "17920299876537932"
+   }
+  },
+  {
+   "day": 24,
+   "results": {
+    "instagram": "18133856194681909"
    }
   }
  ]
