@@ -1,5 +1,5 @@
 {
- "day": 24,
+ "day": 25,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -13,16 +13,14 @@
   "Why a spoon looks bent in water (refraction)",
   "How a lever lets you lift a car (torque)",
   "Why a pendulum keeps time (period independent of amplitude)",
-  "Resonance: how a voice can shatter a wine glass"
+  "Resonance: how a voice can shatter a wine glass",
+  "The Doppler effect: why a passing siren changes pitch"
  ],
  "pending": {
-  "day": 24,
-  "topic": "Resonance: how a voice can shatter a wine glass",
-  "episode": "episodes/e024_resonance_how_a_voice_can_shatter_a_wine.py",
-  "title": "Can a voice really shatter a glass? #physics #shorts",
-  "published": {
-   "instagram": "18133856194681909"
-  }
+  "day": 25,
+  "topic": "The Doppler effect: why a passing siren changes pitch",
+  "episode": "episodes/e025_the_doppler_effect_why_a_passing_siren_c.py",
+  "title": "Why a passing siren changes pitch #physics #shorts"
  },
  "published": [
   {
