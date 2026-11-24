@@ -1,5 +1,5 @@
 {
- "day": 26,
+ "day": 27,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -15,16 +15,14 @@
   "Why a pendulum keeps time (period independent of amplitude)",
   "Resonance: how a voice can shatter a wine glass",
   "The Doppler effect: why a passing siren changes pitch",
-  "Why a curveball curves (Magnus effect)"
+  "Why a curveball curves (Magnus effect)",
+  "How noise-cancelling headphones work (destructive interference)"
  ],
  "pending": {
-  "day": 26,
-  "topic": "Why a curveball curves (Magnus effect)",
-  "episode": "episodes/e026_why_a_curveball_curves_magnus_effect.py",
-  "title": "Why a curveball curves #physics #shorts",
-  "published": {
-   "instagram": "18189290818418782"
-  }
+  "day": 27,
+  "topic": "How noise-cancelling headphones work (destructive interference)",
+  "episode": "episodes/e027_how_noise_cancelling_headphones_work_des.py",
+  "title": "How adding sound makes headphones quieter #physics #shorts"
  },
  "published": [
   {
