@@ -1,5 +1,5 @@
 {
- "day": 27,
+ "day": 28,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -16,16 +16,14 @@
   "Resonance: how a voice can shatter a wine glass",
   "The Doppler effect: why a passing siren changes pitch",
   "Why a curveball curves (Magnus effect)",
-  "How noise-cancelling headphones work (destructive interference)"
+  "How noise-cancelling headphones work (destructive interference)",
+  "Why higher satellites move slower (orbital speed)"
  ],
  "pending": {
-  "day": 27,
-  "topic": "How noise-cancelling headphones work (destructive interference)",
-  "episode": "episodes/e027_how_noise_cancelling_headphones_work_des.py",
-  "title": "How adding sound makes headphones quieter #physics #shorts",
-  "published": {
-   "instagram": "18029691584704831"
-  }
+  "day": 28,
+  "topic": "Why higher satellites move slower (orbital speed)",
+  "episode": "episodes/e028_why_higher_satellites_move_slower_orbita.py",
+  "title": "Why higher satellites move slower #physics #shorts"
  },
  "published": [
   {
