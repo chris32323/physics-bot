@@ -24,7 +24,10 @@
   "day": 29,
   "topic": "Escape velocity: how fast you need to leave Earth for good",
   "episode": "episodes/e029_escape_velocity_how_fast_you_need_to_lea.py",
-  "title": "How fast must you go to escape Earth? #physics #shorts"
+  "title": "How fast must you go to escape Earth? #physics #shorts",
+  "published": {
+   "instagram": "18120899791801389"
+  }
  },
  "published": [
   {
@@ -119,6 +122,12 @@
    "day": 28,
    "results": {
     "instagram": "18054644474811249"
+   }
+  },
+  {
+   "day": 29,
+   "results": {
+    "instagram": "18120899791801389"
    }
   }
  ]
