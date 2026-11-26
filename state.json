@@ -1,5 +1,5 @@
 {
- "day": 28,
+ "day": 29,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -17,16 +17,14 @@
   "The Doppler effect: why a passing siren changes pitch",
   "Why a curveball curves (Magnus effect)",
   "How noise-cancelling headphones work (destructive interference)",
-  "Why higher satellites move slower (orbital speed)"
+  "Why higher satellites move slower (orbital speed)",
+  "Escape velocity: how fast you need to leave Earth for good"
  ],
  "pending": {
-  "day": 28,
-  "topic": "Why higher satellites move slower (orbital speed)",
-  "episode": "episodes/e028_why_higher_satellites_move_slower_orbita.py",
-  "title": "Why higher satellites move slower #physics #shorts",
-  "published": {
-   "instagram": "18054644474811249"
-  }
+  "day": 29,
+  "topic": "Escape velocity: how fast you need to leave Earth for good",
+  "episode": "episodes/e029_escape_velocity_how_fast_you_need_to_lea.py",
+  "title": "How fast must you go to escape Earth? #physics #shorts"
  },
  "published": [
   {
