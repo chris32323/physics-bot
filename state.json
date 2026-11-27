@@ -25,7 +25,10 @@
   "day": 30,
   "topic": "How a rainbow forms (dispersion and the 42° angle)",
   "episode": "episodes/e030_how_a_rainbow_forms_dispersion_and_the_4.py",
-  "title": "Why rainbows appear at 42 degrees #physics #shorts"
+  "title": "Why rainbows appear at 42 degrees #physics #shorts",
+  "published": {
+   "instagram": "18019365614752053"
+  }
  },
  "published": [
   {
@@ -126,6 +129,12 @@
    "day": 29,
    "results": {
     "instagram": "18120899791801389"
+   }
+  },
+  {
+   "day": 30,
+   "results": {
+    "instagram": "18019365614752053"
    }
   }
  ]
