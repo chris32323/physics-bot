@@ -1,5 +1,5 @@
 {
- "day": 29,
+ "day": 30,
  "done": [
   "Projectile motion: which angle throws the farthest?",
   "Orbits: why the Moon doesn't fall down to Earth (it falls – and keeps missing)",
@@ -18,16 +18,14 @@
   "Why a curveball curves (Magnus effect)",
   "How noise-cancelling headphones work (destructive interference)",
   "Why higher satellites move slower (orbital speed)",
-  "Escape velocity: how fast you need to leave Earth for good"
+  "Escape velocity: how fast you need to leave Earth for good",
+  "How a rainbow forms (dispersion and the 42° angle)"
  ],
  "pending": {
-  "day": 29,
-  "topic": "Escape velocity: how fast you need to leave Earth for good",
-  "episode": "episodes/e029_escape_velocity_how_fast_you_need_to_lea.py",
-  "title": "How fast must you go to escape Earth? #physics #shorts",
-  "published": {
-   "instagram": "18120899791801389"
-  }
+  "day": 30,
+  "topic": "How a rainbow forms (dispersion and the 42° angle)",
+  "episode": "episodes/e030_how_a_rainbow_forms_dispersion_and_the_4.py",
+  "title": "Why rainbows appear at 42 degrees #physics #shorts"
  },
  "published": [
   {
